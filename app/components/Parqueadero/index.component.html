@@ -1,0 +1,23 @@
+<div *ngIf="parqueaderos">
+    <hr>
+    <a routerLink="/parqueaderos/new" class="btn btn-primary">Nuevo Parqueadero</a>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id Parqueadero</th>
+                <th>Nombre</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let parqueadero of parqueaderos">
+            <tr>
+                <th>{{ parqueadero.IdParqueadero }}</th>
+                <th>{{ parqueadero.nombre }}</th>               
+                <th><a routerLink="/parqueaderos/edit/{{ parqueadero.IdParqueadero }}" class="btn btn-info">Actualizar</a></th>
+                <th><a routerLink="/parqueaderos/delete/{{ parqueadero.IdParqueadero }}" class="btn btn-danger">Eliminar</a></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
